@@ -17,6 +17,7 @@ public class ImageFirework {
 
     private String name;
     private String imageName;
+    private int customModelData;
 
 
     public String getName() {
@@ -33,6 +34,14 @@ public class ImageFirework {
 
     public void setImageName(String imageName) {
         this.imageName = imageName;
+    }
+
+    public int getCustomModelData() {
+        return customModelData;
+    }
+
+    public void setCustomModelData(int customModelData) {
+        this.customModelData = customModelData;
     }
 
     public void explode(Location location, double yawRotation) throws IOException {
