@@ -11,6 +11,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 public class ImageFirework {
 
@@ -75,7 +76,7 @@ public class ImageFirework {
 
                         Location location = explodeLocation.clone().add(rotatedX, offsetY, rotatedZ);
                         Particle.DustOptions dust = new Particle.DustOptions(Color.fromRGB(red, green, blue), 1);
-                        explodeLocation.getWorld().spawnParticle(Particle.REDSTONE, location, 0, 0, 0, 0, dust);
+                        Objects.requireNonNull(explodeLocation.getWorld()).spawnParticle(Particle.REDSTONE, location, 0, 0, 0, 0, dust);
                     }
                 }
             }

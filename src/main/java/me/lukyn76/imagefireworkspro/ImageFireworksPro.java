@@ -12,6 +12,7 @@ public final class ImageFireworksPro extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+        saveDefaultConfig();
         createFoldersAndFiles();
         registerListeners();
 
@@ -24,9 +25,13 @@ public final class ImageFireworksPro extends JavaPlugin {
     }
 
     private void createFoldersAndFiles() {
-        saveDefaultConfig();
         if (!new File(getDataFolder(), "images").exists()) {
             new File(getDataFolder(), "images").mkdir();
+        }
+
+        File exampleImage = new File(getDataFolder(), "images/dog.png");
+        if (!exampleImage.exists()) {
+            saveResource("images/dog.png", false);
         }
     }
 
