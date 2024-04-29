@@ -1,0 +1,5 @@
+Fireworks:
+  dog:
+    name: "Dog"
+    imageName: "dog.png"
+    customModelData: 4444
