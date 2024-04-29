@@ -1,0 +1,4 @@
+name: ImageFireworksPro
+version: '${project.version}'
+main: me.lukyn76.imagefireworkspro.ImageFireworksPro
+api-version: '1.20'
