@@ -34,13 +34,13 @@ public class ImageFirework {
         this.imageName = imageName;
     }
 
-    public void explode(Location location, double playerViewRotation) throws IOException {
-        displayImage(location, playerViewRotation);
+    public void explode(Location location, double yawRotation) throws IOException {
+        displayImage(location, yawRotation);
     }
 
 
 
-    private void displayImage(Location explodeLocation, double playerViewRotation) throws IOException {
+    private void displayImage(Location explodeLocation, double yawRotation) throws IOException {
         ImageFireworksPro plugin = ImageFireworksPro.getInstance();
 
         File imageFile = new File(plugin.getDataFolder(), "images/"+imageName);
@@ -54,7 +54,7 @@ public class ImageFirework {
         int width = image.getWidth();
         int height = image.getHeight();
 
-        double yawRadians = Math.toRadians(playerViewRotation);
+        double yawRadians = Math.toRadians(yawRotation);
 
         BukkitTask taskId = Bukkit.getScheduler().runTaskTimerAsynchronously(plugin, () -> {
             for(int x = 0; x < width; x++) {
