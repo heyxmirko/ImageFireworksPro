@@ -28,7 +28,7 @@ Fireworks:
 4. Done!
 
 ## Usage
-In-game, use command `/ifp give <player> <firework> <amount>` to obtain the image firework or launch a firework rocket with the same `customModelData` to display the image.
+In-game, use command `/ifp give <player> <firework> [amount]` to obtain the image firework or launch a firework rocket with the same `customModelData` to display the image.
 Fireworks work with dispensers & crossbows too!
 
 ## Support
