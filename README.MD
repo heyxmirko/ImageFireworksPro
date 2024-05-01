@@ -2,6 +2,8 @@
 
 ImageFireworksPro is a Spigot plugin that enables the creation of custom fireworks that display images as particle effects in Minecraft.
 
+![preview](https://i.imgur.com/V3KpvgX.png)
+
 ## Installation
 
 1. Place `ImageFireworksPro.jar` into the server's `plugins` directory.
@@ -23,7 +25,8 @@ Fireworks:
 ```
 
 ## Usage
-In-game, launch a firework rocket with the `customModelData` to display the image.
+In-game, use command `/ifp give <player> <firework> <amount>` to obtain the image firework or launch a firework rocket with the same `customModelData` to display the image.
+Fireworks work with dispensers & crossbows too!
 
 ## Support
 Report issues or request features by opening an issue on the GitHub repository.
