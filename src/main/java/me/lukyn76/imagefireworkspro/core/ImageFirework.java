@@ -1,10 +1,7 @@
 package me.lukyn76.imagefireworkspro.core;
 
 import me.lukyn76.imagefireworkspro.ImageFireworksPro;
-import org.bukkit.Bukkit;
-import org.bukkit.Color;
-import org.bukkit.Location;
-import org.bukkit.Particle;
+import org.bukkit.*;
 import org.bukkit.scheduler.BukkitTask;
 
 import javax.imageio.ImageIO;
@@ -45,6 +42,7 @@ public class ImageFirework {
     }
 
     public void explode(Location location, double yawRotation) throws IOException {
+        location.getWorld().playSound(location, Sound.ENTITY_FIREWORK_ROCKET_BLAST_FAR, 10F, 1F);
         displayImage(location, yawRotation);
     }
 
