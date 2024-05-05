@@ -11,6 +11,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
@@ -50,10 +51,11 @@ public class CommandHandler implements CommandExecutor, TabCompleter {
                         amount = Integer.parseInt(args[3]);
                     }
                     ItemStack firework = new ItemStack(Material.FIREWORK_ROCKET, amount);
-                    ItemMeta fireworkMeta = firework.getItemMeta();
+                    FireworkMeta fireworkMeta = (FireworkMeta) firework.getItemMeta();
 
                     fireworkMeta.setDisplayName(imageFirework.getName());
                     fireworkMeta.setCustomModelData(imageFirework.getCustomModelData());
+                    fireworkMeta.setPower(1);
                     firework.setItemMeta(fireworkMeta);
 
                     player.getInventory().addItem(firework);
