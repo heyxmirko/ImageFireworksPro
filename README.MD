@@ -22,6 +22,7 @@ Fireworks:
     name: "Display Name"
     imageName: "filename.png"
     customModelData: 1234
+    displayTime: 3 # in seconds
 ```
 
 3. Reload the config with command `/ifp reload`

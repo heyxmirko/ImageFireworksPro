@@ -15,6 +15,7 @@ public class ImageFirework {
     private String name;
     private String imageName;
     private int customModelData;
+    private int displayTime;
 
 
     public String getName() {
@@ -39,6 +40,14 @@ public class ImageFirework {
 
     public void setCustomModelData(int customModelData) {
         this.customModelData = customModelData;
+    }
+
+    public int getDisplayTime() {
+        return displayTime;
+    }
+
+    public void setDisplayTime(int displayTime) {
+        this.displayTime = displayTime;
     }
 
     public void explode(Location location, double yawRotation) throws IOException {
@@ -89,7 +98,7 @@ public class ImageFirework {
             }
         }, 0L, 3L);
 
-        Bukkit.getScheduler().runTaskLater(plugin, taskId::cancel, 3 * 20L);
+        Bukkit.getScheduler().runTaskLater(plugin, taskId::cancel, displayTime * 20L);
 
     }
 }

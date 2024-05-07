@@ -24,8 +24,12 @@ public class ConfigManager {
                 firework.setName(fireworkSection.getString("name"));
                 firework.setImageName(fireworkSection.getString("imageName"));
                 firework.setCustomModelData(fireworkSection.getInt("customModelData"));
+                firework.setDisplayTime(fireworkSection.getInt("displayTime", 3));
 
                 return firework;
+
+                // help me write a commit message under this line that I added a new option displaytime to the config
+                // Add a new option displayTime to the config that allows to set the display time of the firework
             }
         }
         return null;
@@ -41,6 +45,7 @@ public class ConfigManager {
         firework.setName(fireworkSection.getString("name"));
         firework.setImageName(fireworkSection.getString("imageName"));
         firework.setCustomModelData(fireworkSection.getInt("customModelData"));
+        firework.setDisplayTime(fireworkSection.getInt("displayTime"));
 
         return firework;
     }

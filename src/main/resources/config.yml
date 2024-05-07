@@ -3,3 +3,4 @@ Fireworks:
     name: "Dog"
     imageName: "dog.png"
     customModelData: 1000
+    displayTime: 3 # in seconds
