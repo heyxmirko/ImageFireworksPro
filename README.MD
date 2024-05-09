@@ -22,6 +22,7 @@ Fireworks:
     name: "Display Name"
     imageName: "filename.png"
     customModelData: 1234
+    flightDuration: 1 # 0-3
     displayTime: 3 # in seconds
 ```
 
