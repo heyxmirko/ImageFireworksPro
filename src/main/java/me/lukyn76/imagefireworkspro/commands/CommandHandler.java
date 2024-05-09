@@ -23,6 +23,11 @@ public class CommandHandler implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
 
+        if (args.length == 0) {
+            sender.sendMessage("§cUsage: /imagefireworkspro <give | reload>");
+            return false;
+        }
+
 
         switch (args[0].toLowerCase()) {
             case "reload":
