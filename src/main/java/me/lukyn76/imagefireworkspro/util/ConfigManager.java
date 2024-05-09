@@ -2,9 +2,9 @@ package me.lukyn76.imagefireworkspro.util;
 
 import me.lukyn76.imagefireworkspro.ImageFireworksPro;
 import me.lukyn76.imagefireworkspro.core.ImageFirework;
+import org.bukkit.Color;
 import org.bukkit.configuration.ConfigurationSection;
 
-import java.util.List;
 import java.util.Set;
 
 public class ConfigManager {
@@ -25,11 +25,9 @@ public class ConfigManager {
                 firework.setImageName(fireworkSection.getString("imageName"));
                 firework.setCustomModelData(fireworkSection.getInt("customModelData"));
                 firework.setDisplayTime(fireworkSection.getInt("displayTime", 3));
+                firework.setFlightDuration(fireworkSection.getInt("flightDuration", 1));
 
                 return firework;
-
-                // help me write a commit message under this line that I added a new option displaytime to the config
-                // Add a new option displayTime to the config that allows to set the display time of the firework
             }
         }
         return null;
@@ -46,6 +44,7 @@ public class ConfigManager {
         firework.setImageName(fireworkSection.getString("imageName"));
         firework.setCustomModelData(fireworkSection.getInt("customModelData"));
         firework.setDisplayTime(fireworkSection.getInt("displayTime"));
+        firework.setFlightDuration(fireworkSection.getInt("flightDuration", 1));
 
         return firework;
     }

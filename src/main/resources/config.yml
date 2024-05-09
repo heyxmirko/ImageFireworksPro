@@ -2,5 +2,6 @@ Fireworks:
   dog:
     name: "Dog"
     imageName: "dog.png"
-    customModelData: 1000
+    customModelData: 1234
+    flightDuration: 1 # 0-3
     displayTime: 3 # in seconds

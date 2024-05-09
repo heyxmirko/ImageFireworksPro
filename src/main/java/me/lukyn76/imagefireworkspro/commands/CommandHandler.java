@@ -4,6 +4,8 @@ import me.lukyn76.imagefireworkspro.ImageFireworksPro;
 import me.lukyn76.imagefireworkspro.core.ImageFirework;
 import me.lukyn76.imagefireworkspro.util.ConfigManager;
 import org.bukkit.Bukkit;
+import org.bukkit.Color;
+import org.bukkit.FireworkEffect;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -11,7 +13,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.FireworkMeta;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,17 +45,26 @@ public class CommandHandler implements CommandExecutor, TabCompleter {
                 ImageFirework imageFirework = ConfigManager.getImageFirework(fireworkName);
                 if (imageFirework != null) {
 
-
-                    // Give firework
                     int amount = 1;
                     if (args.length == 4) {
                         amount = Integer.parseInt(args[3]);
                     }
                     ItemStack firework = new ItemStack(Material.FIREWORK_ROCKET, amount);
-                    ItemMeta fireworkMeta = firework.getItemMeta();
+                    FireworkMeta fireworkMeta = (FireworkMeta) firework.getItemMeta();
 
                     fireworkMeta.setDisplayName(imageFirework.getName());
                     fireworkMeta.setCustomModelData(imageFirework.getCustomModelData());
+
+                    FireworkEffect effect = FireworkEffect.builder()
+                            .with(FireworkEffect.Type.BURST)
+                            .withColor(Color.BLACK)
+                            .build();
+                    fireworkMeta.addEffect(effect);
+
+                    if (imageFirework.getFlightDuration() > 0) {
+                        fireworkMeta.setPower(imageFirework.getFlightDuration());
+                    }
+
                     firework.setItemMeta(fireworkMeta);
 
                     player.getInventory().addItem(firework);

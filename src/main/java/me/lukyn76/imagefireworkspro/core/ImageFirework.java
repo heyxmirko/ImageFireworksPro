@@ -16,6 +16,7 @@ public class ImageFirework {
     private String imageName;
     private int customModelData;
     private int displayTime;
+    private int flightDuration;
 
 
     public String getName() {
@@ -50,8 +51,15 @@ public class ImageFirework {
         this.displayTime = displayTime;
     }
 
+    public int getFlightDuration() {
+        return flightDuration;
+    }
+
+    public void setFlightDuration(int flightDuration) {
+        this.flightDuration = flightDuration;
+    }
+
     public void explode(Location location, double yawRotation) throws IOException {
-        location.getWorld().playSound(location, Sound.ENTITY_FIREWORK_ROCKET_BLAST_FAR, 10F, 1F);
         displayImage(location, yawRotation);
     }
 
